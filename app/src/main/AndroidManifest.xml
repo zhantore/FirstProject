@@ -4,6 +4,7 @@
 
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NOTIFICATION_POLICY" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 
     <application
         android:allowBackup="true"
@@ -12,13 +13,16 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".AnimationActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
+        <activity android:name=".SavingDataActivity">
         </activity>
+
+        <service
+            android:name=".MyService"
+            android:enabled="true"
+            android:exported="true" />
+
+        <activity android:name=".ServiceActivity" />
+        <activity android:name=".AnimationActivity" />
         <activity
             android:name=".MenuActivity"
             android:label="@string/title_activity_menu"
@@ -26,15 +30,17 @@
         <activity android:name=".Module56" />
         <activity android:name=".KotlinActivity" />
         <activity
-            android:name=".CalendarActivity"
-            android:theme="@style/MyTheme" />
+            android:name=".CalendarActivity" />
         <activity android:name=".MainActivity3" />
         <activity android:name=".MainActivity2" />
         <activity
             android:name=".NavigationActivity"
-            android:label="@string/title_activity_navigation">
+            android:label="@string/title_activity_navigation" />
+        <activity android:name=".MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
         </activity>
-        <activity android:name=".MainActivity" />
     </application>
-
 </manifest>

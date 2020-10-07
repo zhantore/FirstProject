@@ -4,7 +4,7 @@
     <string name="title_home">Home</string>
     <string name="title_dashboard">Dashboard</string>
     <string name="title_notifications">Notifications</string>
-    <string name="button_name">Show</string>
+    <string name="button_name">Показать</string>
     <string name="title_activity_menu">MenuActivity</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
@@ -12,7 +12,6 @@
     <string name="nav_header_subtitle">android.studio@android.com</string>
     <string name="nav_header_desc">Navigation header</string>
     <string name="action_settings">Settings</string>
-    <string name="button_save_send">Save and send</string>
 
     <string name="menu_home">Home</string>
     <string name="menu_gallery">Gallery</string>
@@ -35,10 +34,11 @@
     <string name="start">Start service</string>
     <string name="stop">Stop service</string>
 
-    <string name="write_file">Write file</string>
-    <string name="read_file">Read file</string>
-    <string name="write_file_sd">Write file to SD</string>
-    <string name="read_file_sd">Read file from SD</string>
-    <string name="hint_enter_name">Enter your name</string>
+    <string name="write_file">Записать файл</string>
+    <string name="read_file">Прочесть файл</string>
+    <string name="write_file_sd">Записать файл на SD</string>
+    <string name="read_file_sd">Прочесть файл с SD</string>
+    <string name="button_save_send">Сохранить и отправить</string>
+    <string name="hint_enter_name">Введите свое имя</string>
 
 </resources>

@@ -1,32 +1,44 @@
 package kz.firstproject;
 
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.preference.PreferenceManager;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.widget.CalendarView;
-
-import java.util.Objects;
+import android.view.Menu;
+import android.view.MenuItem;
+import android.widget.TextView;
 
 public class CalendarActivity extends AppCompatActivity {
 
-    CalendarView calendarView;
-    String selectedDate = "";
+    TextView textResult;
+    String result = "";
+    SharedPreferences sharedPreferences;
+    SharedPreferences sh;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_calendar);
-        calendarView = findViewById(R.id.calendarView2);
+        sharedPreferences = getSharedPreferences("Travelling", MODE_PRIVATE);
+        textResult = findViewById(R.id.textResult);
+        result = sharedPreferences.getString("holiday", "");
+        sh = PreferenceManager.getDefaultSharedPreferences(this);
 
-        calendarView.setOnDateChangeListener(new CalendarView.OnDateChangeListener() {
-            @Override
-            public void onSelectedDayChange(@NonNull CalendarView calendarView, int i, int i1, int i2) {
-                selectedDate = String.valueOf(i2) + "/" + String.valueOf(i1+1) + "/" + String.valueOf(i);
-                setResult(10, getIntent().putExtra("fromDate", selectedDate));
-                finish();
-            }
-        });
+        getSupportFragmentManager().beginTransaction()
+                .replace(R.id.fragment, new PrefFragment())
+                .commit();
+        textResult.setText(result);
+    }
 
+    @Override
+    protected void onResume() {
+        boolean notif = sh.getBoolean("notif", false);
+        String address = sh.getString("address", "");
+        String text = "Notifications are "
+                + ((notif) ? "enabled, address = " + address : "disabled");
+        textResult.setText(text);
+        super.onResume();
     }
 }

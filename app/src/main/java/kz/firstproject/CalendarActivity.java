@@ -26,9 +26,7 @@ public class CalendarActivity extends AppCompatActivity {
         result = sharedPreferences.getString("holiday", "");
         sh = PreferenceManager.getDefaultSharedPreferences(this);
 
-        getSupportFragmentManager().beginTransaction()
-                .replace(R.id.fragment, new PrefFragment())
-                .commit();
+        getSupportFragmentManager().beginTransaction().replace(R.id.fragment, new PrefFragment()).commit();
         textResult.setText(result);
     }
 

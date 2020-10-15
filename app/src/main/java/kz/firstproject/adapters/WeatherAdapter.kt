@@ -26,7 +26,7 @@ class WeatherAdapter(val context: Context, val weatherData: WeatherData) : Recyc
 
     override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
         holder.cityTV.text = "Город: " + weatherData.timezone
-        holder.tempTV.text = "Температура: " + weatherData.current.temp + " C"
+        holder.tempTV.text = "Температура: " + weatherData.current.temp + " °C"
         holder.humidityTV.text = "Влажность: " + weatherData.current.humidity + " %"
     }
 

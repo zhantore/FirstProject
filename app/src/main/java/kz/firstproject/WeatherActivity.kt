@@ -30,7 +30,7 @@ class WeatherActivity : AppCompatActivity() {
                 "76.892289",
                 "metric",
                 "hourly,daily",
-                "cc9c25043a889962ade46f38372d8d80").enqueue(object : Callback<WeatherData> {
+                "your app_id").enqueue(object : Callback<WeatherData> {
 
             override fun onResponse(call: Call<WeatherData>, response: Response<WeatherData>) {
                 val weatherAdapter =
